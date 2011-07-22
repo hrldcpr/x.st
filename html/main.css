@@ -14,7 +14,7 @@ pre {margin: 1em 50px;}
 #counter {z-index: 2;
   position: absolute; right: 0px; top: 0px;}
 #body {z-index: 2;
-  position: absolute; left: 100px; top: 360px; width: 800px;}
+  position: absolute; left: 100px; top: 375px; width: 800px;}
 
 #menu {z-index: 3;
   position: absolute; top: 100px; left: 600px;
