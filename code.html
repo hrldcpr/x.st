@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>code</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="pyLAPJV, LAPJV, Python, Linear Assignment Problem, assignment problem, Munkres assignment algorithm, Hungarian algorithm, circuits, resistance, conductance, graph metrics, graph distance, distance metrics, jogl, base64, Java, OpenGL, volumetric, 3d textures, GL_TEXTURE_3D, gluUnProject, pick ray, Collections, immutable, icollection, set, map, bag, list, stack, vector, unmodifiable, mechanical linkages, linkages, rigidity, rigidity matrix, planar, Penrose tiling, transformable Penrose tiling, Penrose linkage" />
+    <meta name="description" content="Harold Cooper's software and code" />
+    <link rel="stylesheet" href="main.css" type="text/css" />
+  </head>
+  <body bgcolor="white">
+    <div id="picture"><img src="images/excel3.jpg" alt="grayed powerplant" /></div>
+    <div id="menu">
+      <div class="menu">
+	~<a href=".">home</a><br />
+	!code<br />
+	@<a href="http://twitter.com/haroldshouting">twitter</a><br />
+	#<a href="http://soundcloud.com/hrldcpr">music</a><br />
+	$<a href="http://hunch.com/hrldcpr">hunch</a><br/>
+	%<br/>
+	^<br/>
+	&amp;<a href="etc.html">c.</a><br/>
+	*
+      </div>
+    </div>
+    <div id="submenu">
+      <div class="submenu">
+	<table>
+	  <tr>
+	    <td class="subhead">!</td>
+	    <td>
+	      8<a href="#PCollections">PCollections</a><br />
+	      7<a href="#penrose">penrose</a><br />
+	      6<a href="#linkage">linkage</a><br />
+	      5<a href="#volumetric">volumetric</a><br />
+	      4<a href="#Things">Things</a><br />
+	      3<a href="#Base64">Base64</a><br />
+	      2<a href="#conductance">conductance</a><br />
+	      1<a href="#hungarian">hungarian</a><br />
+	      0<a href="#pyLAPJV">pyLAPJV</a>
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </div>
+    <div id="body">
+
+      <a name="PCollections" id="PCollections"></a>
+      <div class="entry">
+	<p class="subject">PCollections: Persistent Java Collections</p>
+	<p>PCollections is meant to serve as a persistent and immutable
+	  analogue of the Java
+	  Collections Framework. This includes efficient, thread-safe, generic,
+	  immutable, and persistent
+	  stacks, maps, vectors, sets, and bags, compatible with their Java
+	  Collections counterparts.</p>
+	<p>Persistent and immutable datatypes are increasingly appreciated as a simple, thread-safe,
+	  and sometimes more time- and space-efficient alternative to mutable datatypes.</p>
+	<p class="heading">Website:</p>
+	<p>For files and documentation, see <a href="http://pcollections.org">pcollections.org</a>.</p>
+	<p class="entryfooter">2008-11-29</p>
+      </div>
+
+      <a name="penrose" id="penrose"></a>
+      <div class="entry">
+	<p class="subject">Transformable Penrose Tilings</p>
+	<img align="right" src="Public/penrose/penrose2t-2.gif" border="1"/>
+	<p>After Bill McKenna told me about <a href="http://www.polyhedra.jp/polyhedron/tr_penrose/zindex.html">Junichi Yananose's Transformable Penrose Tilings</a>, I wrote software to generate and simulate them. Included here are linkage files, movies, and the software used to generate the linkage files.</p>
+	<p class="heading">Files:</p>
+	<p><a href="Public/penrose/linkages/">Linkage files</a> (for use with the <a href="Public/linkage">linkage simulator</a>)</p>
+	<p><a href="Public/penrose/movies/">Quicktime movies</a></p>
+	<p><a href="Public/penrose/penrose.tgz">Python source code</a> for generating Penrose linkages</p>
+	<p class="entryfooter">2007-06-15</p>
+      </div>
+
+      <a name="linkage" id="linkage"></a>
+      <div class="entry">
+	<p class="subject">Mechanical Linkages in Python</p>
+	<img align="right" src="Public/linkage/images/peaucellier.png" width="300" border="1"/>
+	<p>This software provides a graphical interface for simulating mechanical linkages.</p>
+	<p class="heading">Website:</p>
+	<p>For files and discussion, see <a href="Public/linkage">the homepage</a>.</p>
+	<p class="entryfooter">2007-06-15</p>
+      </div>
+
+      <a name="volumetric" id="volumetric"></a>
+      <div class="entry">
+	<p class="subject">Volumetric Rendering in OpenGL</p>
+	<img align="right" src="images/volumetric.png" alt="screenshot of volumetric" />
+	<p>This GLUT C program demonstrates volumetric rendering in OpenGL using 2d or 3d textures. (It also demonstrates the use of gluUnProject() for generating a pick ray.) It's the first thing I've written using OpenGL, but there seem to be precious few online examples of using GL_TEXTURE_3D, let alone rendering volumetric data, so here it is. Thanks to Keenan Crane for his help.</p>
+	<p class="heading">Files:</p>
+	<p><a href="Public/volumetric.tgz">volumetric.tgz</a></p>
+	<p class="entryfooter">2006-01-22</p>
+      </div>
+
+      <a name="Things" id="Things"></a>
+      <div class="entry">
+	<p class="subject">Things</p>
+	<img align="right" src="images/things.png" alt="screenshot of Things example" />
+	<p>On the final day in a short introductory Java class at the Dalian University of Technology, the students modified a very simple Thing class to give it more interesting behavior.</p>
+	<p class="heading">Website:</p>
+	<p>Source code, a lab, and examples are at:</p>
+	<p><a href="Public/things/">Things!</a></p>
+	<p class="entryfooter">2005-07-07</p>
+      </div>
+
+      <a name="Base64" id="Base64"></a>
+      <div class="entry">
+	<p class="subject">Base64.java</p>
+	<p>I wrote this at about 5AM in northeastern China, for MIT iLabs. It is just a very simple base64 decoder, which can quickly and easily decode either an entire base64 buffer or a series of four-digit base64 'quads', for serial operation.</p>
+	<p class="heading">Files:</p>
+	<p><a href="Public/Base64.java">Base64.java</a></p>
+	<p><a href="Public/Base64Test.java">Base64Test.java</a></p>
+	<p class="heading">Reference:</p>
+	<p>To use Base64 in your code, see <a href="Public/Base64.html">the Base64 JavaDoc</a></p>
+	<p>Base64Test.java's <tt>bufferedTest()</tt> and <tt>serialTest()</tt> are good examples of how to use Base64. Also, Base64Test can be used as a command line decoder and a benchmarking tool.</p>
+	<p>To use Base64Test, do something like the following, where <tt>test.txt</tt> is base64-encoded:</p>
+	<pre>java Base64Test buffered &lt; test.txt &gt; test.out</pre>
+	<p>Or, for serial decoding:</p>
+	<pre>java Base64Test serial &lt; test.txt &gt; test.out</pre>
+	<p class="entryfooter">2005-06-24</p>
+      </div>
+
+      <a name="conductance" id="conductance"></a>
+      <div class="entry">
+	<p class="subject">conductance 0.1</p>
+	<p>This Python module computes equivalent resistance or conductance in simple circuits. Furthermore, since any weighted graph can be considered as a network of resistors, this code can be used to provide a general graph distance metric.</p>
+	<p>Note that this module depends on the python modules <a href="http://numpy.sf.net/">numarray</a> and <a href="http://dkbza.org/pydot.html">pydot</a> (which in turn requires <a href="http://pyparsing.sourceforge.net/">pyparsing</a>).</p>
+	<p class="heading">Files:</p>
+	<p><a href="Public/conductance.tgz">conductance.tgz</a></p>
+	<p class="entryfooter">2004-12-21</p>
+      </div>
+
+      <a name="hungarian" id="hungarian"></a>
+      <div class="entry">
+	<p class="subject">hungarian 0.2</p>
+	<p>This module is just a simple wrapper for a C++ implementation of Knuth's Hungarian algorithm, a.k.a. Munkres' algorithm, for the linear assignment problem.</p>
+	<p>Note that this module depends on the numpy module (or the older numarray module). You must install numpy before you can compile this module. Numpy can be downloaded from <a href="http://numpy.sf.net">http://numpy.sf.net</a></p>
+	<p>For a faster, but less tolerant, LAP algorithm see <a href="#pyLAPJV">pyLAPJV</a> below.</p>
+	<p class="heading">Files:</p>
+	<p><a href="Public/hungarian.tgz">hungarian.tgz</a> (newest version)</p>
+	<p><a href="Public/hungarian-numarray.tgz">hungarian-numarray.tgz</a> (version 0.1.1; uses numarray, the precursor to numpy)</p>
+	<p class="entryfooter">2004-09-03</p>
+	<p class="entryfooter">updated 2008-06-26</p>
+      </div>
+
+      <a name="pyLAPJV" id="pyLAPJV"></a>
+      <div class="entry">
+	<p class="subject">pyLAPJV 0.3</p>
+	<p>This Python module is just a simple wrapper for the C++ code written by Jonker to implement the Jonker-Volgenant algorithm, LAPJV, for the linear assignment problem.</p>
+	<p>Note that this module depends on the numpy module (or the older numarray module). You must install numpy before you can compile this module. Numpy can be downloaded from <a href="http://numpy.sf.net">http://numpy.sf.net</a></p>
+	<p>See the important notes in the included README.txt to properly use this algorithm. For a more tolerant, but slower, LAP algorithm see <a href="#hungarian">hungarian</a> above.</p>
+	<p>If you have any problems with this module, you should email me (<a href="mailto:hrldcpr at gmail com">hrldcpr at gmail com</a>), not Dr. Jonker.</p>
+	<p class="heading">Files:</p>
+	<p><a href="Public/pyLAPJV.tgz">pyLAPJV.tgz</a> (newest version)</p>
+	<p><a href="Public/pyLAPJV-numarray.tgz">pyLAPJV-numarray.tgz</a> (version 0.2.3; uses numarray, the precursor to numpy)</p>
+	<p class="heading">Additional Information:</p>
+	<p>LAPJV comes from the paper:</p>
+	<p>R. Jonker and A. Volgenant, "A Shortest Augmenting Path Algorithm for Dense and Sparse Linear Assignment Problems," <i>Computing</i>, vol. 38, pp. 325-340, 1987.</p>
+	<p>According to that paper, it is notably faster than the Hungarian algorithm (a.k.a. Munkres' algorithm) and several other linear assignment algorithms.</p>
+	<p>The C++ source comes from:</p>
+	<p><a href="http://www.magiclogic.com/assignment.html">http://www.magiclogic.com/assignment.html</a></p>
+	<p>This wrapper for the algorithm uses single precision (i.e. 32-bit) floating point arithmetic. To change it to double precision, integer, or anything else, simply change the corresponding types in <tt>lap.h</tt>.</p>
+	<p class="entryfooter">2004-08-13</p>
+	<p class="entryfooter">updated 2008-06-25</p>
+      </div>
+    </div>
+  </body>
+</html>

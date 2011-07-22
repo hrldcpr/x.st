@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>et fluttera</title>
+    <style>
+      //div.all {position: absolute; top: 0px; left: 0px; width: 100%; height: 612px;}
+      div.all {margin: 0em auto; width: 100%; height: 612px;}
+      table.grid {position: relative; margin: 0em auto;}
+      div.label {visibility: hidden; z-index: 1; position: absolute; width: 100%; height: 114px; margin: 0em 0em; top: 498px; text-align: center; font-size: 96pt; color: #444400;}
+      div.butterfly {width:100px;}
+      a {color: black; font-weight: bold; text-decoration: none;}
+      a:hover {text-decoration: underline;}
+    </style>
+    <script src="grid.js"></script>
+  </head>
+  <body background="images/wall.gif" bgcolor="black" onload="init()" onunload="stop()">
+    <div class="all">
+      <table class="grid" id="grid" align="center" cellspacing="0" cellpadding="0" border="0">
+	<tr align="center">
+	  <td bgcolor="black" width="102" height="102"><img id="grid_0_0" src="images/sign/0.jpg" /></td>
+	  <td bgcolor="black" width="102"><img id="grid_1_0" src="images/sign/1.jpg" /></td>
+	  <td bgcolor="black" width="102"><img id="grid_2_0" src="images/sign/2.jpg" /></td>
+	  <td bgcolor="black" width="102"><img id="grid_3_0" src="images/sign/3.jpg" /></td>
+	  <td bgcolor="black" width="102"><img id="grid_4_0" src="images/sign/4.jpg" /></td>
+	</tr>
+	<tr align="center">
+	  <td bgcolor="black" height="102"><img id="grid_0_1" src="images/sign/5.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_1_1" src="images/sign/6.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_2_1" src="images/sign/7.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_3_1" src="images/sign/8.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_4_1" src="images/sign/9.jpg" /></td>
+	</tr>
+	<tr align="center">
+	  <td bgcolor="black" height="102"><img id="grid_0_2" src="images/sign/10.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_1_2" src="images/sign/11.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_2_2" src="images/sign/12.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_3_2" src="images/sign/13.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_4_2" src="images/sign/14.jpg" /></td>
+	</tr>
+	<tr align="center">
+	  <td bgcolor="black" height="102"><img id="grid_0_3" src="images/sign/15.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_1_3" src="images/sign/16.jpg" /></td>
+	  <td bgcolor="#88FF88" onmouseover="start()"><img id="grid_2_3" src="images/sign/17.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_3_3" src="images/sign/18.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_4_3" src="images/sign/19.jpg" /></td>
+	</tr>
+	<tr align="center">
+	  <td bgcolor="black" height="102"><img id="grid_0_4" src="images/sign/20.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_1_4" src="images/sign/21.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_2_4" src="images/sign/22.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_3_4" src="images/sign/23.jpg" /></td>
+	  <td bgcolor="black"><img id="grid_4_4" src="images/sign/24.jpg" /></td>
+	</tr>
+	<tr align="center"><td colspan="5"><img src="images/tree/roots.gif"></td></tr>
+	<tr align="center">
+	  <td width="102"><div id="butterfly_0"><a id="butterfly_0_link" href="etcetera.html#places"><img border="0" id="butterfly_0_img" src="images/butterfly.gif" /><br />funny english place names</a></div></td>
+	  <td width="102"><div id="butterfly_1"><a id="butterfly_1_link" href="etcetera.html#verbs"><img border="0" id="butterfly_1_img" src="images/butterfly.gif" /><br />higher order verbs</a></div></td>
+	  <td width="102"><div id="butterfly_2"><a id="butterfly_2_link" href="etcetera.html#shackletonian"><img border="0" id="butterfly_2_img" src="images/butterfly.gif" /><br />the shackletonian operator</a></div></td>
+	  <td width="102"><div id="butterfly_3"><a id="butterfly_3_link" href="etcetera.html#bedtime"><img border="0" id="butterfly_3_img" src="images/butterfly.gif" /><br />bedtime theorems</a></div></td>
+	  <td width="102"><div id="butterfly_4"><a id="butterfly_4_link" href="etcetera.html"><img border="0" id="butterfly_4_img" src="images/butterfly.gif" /><br />&amp;c.</a></div></td>
+	</tr>
+      </table>
+      <!-- <div id="butterfly_0_label" class="label">blog</div>
+	   <div id="butterfly_1_label" class="label">email</div>
+	   <div id="butterfly_2_label" class="label">code</div>
+	   <div id="butterfly_3_label" class="label">cv</div>
+	   <div id="butterfly_4_label" class="label">&amp;c.</div> -->
+    </div>
+  </body>
+</html>
