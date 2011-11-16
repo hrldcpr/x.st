@@ -12,7 +12,7 @@ pre {margin: 1em 50px;}
   position: absolute; left: 690px; top: 250px;
   border-style: dashed; border-width: 2px; border-color: #008;}
 #counter {z-index: 2;
-  position: absolute; right: 0px; top: 0px;}
+  position: absolute; left: 0px; bottom: 0px;}
 #body {z-index: 2;
   position: absolute; left: 100px; top: 375px; width: 800px;}
 
