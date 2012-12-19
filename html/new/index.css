@@ -27,6 +27,19 @@ a:hover {
     font-size: 1.5em;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0px;
+    margin: 0px;
+    padding: 0em 1em 0.5em 1em;
+    width: 100%;
+    background: #ddd;
+    border-top: solid 2px #ccc;
+}
+.footer strong {
+    font-size: 1.5em;
+}
+
 .thing {
     display: inline-block;
     margin: 1em;
