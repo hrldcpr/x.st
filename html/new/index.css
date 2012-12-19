@@ -1,0 +1,30 @@
+html {
+    background: #f8f8f8;
+    font-size: 14pt;
+}
+
+body {
+    padding: 1em 1em;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.thing {
+    display: inline-block;
+    margin: 1em;
+    padding: 1em;
+    background: white;
+    max-width: 400px;
+    border: solid 1px #ccc;
+}
+
+.thing img {
+    float: left;
+    width: 200px;
+}
