@@ -16,6 +16,10 @@ a:hover {
     text-decoration: underline;
 }
 
+strong {
+    font-size: 1.5em;
+}
+
 .header {
     margin: 0px;
     padding: 0em 1em 0.5em 1em;
@@ -32,10 +36,6 @@ a:hover {
     width: 100%;
     background: #ddd;
     border-top: solid 2px #ccc;
-}
-
-strong {
-    font-size: 1.5em;
 }
 
 .thing {
