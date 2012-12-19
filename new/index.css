@@ -23,9 +23,6 @@ a:hover {
     background: #ddd;
     border-bottom: solid 2px #00f8f8;
 }
-.header strong {
-    font-size: 1.5em;
-}
 
 .footer {
     position: fixed;
@@ -36,7 +33,8 @@ a:hover {
     background: #ddd;
     border-top: solid 2px #ccc;
 }
-.footer strong {
+
+strong {
     font-size: 1.5em;
 }
 
