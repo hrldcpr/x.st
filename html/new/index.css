@@ -55,3 +55,8 @@ strong {
     max-height: 200px;
     margin: 0.5em;
 }
+
+.thing.note {
+    background: none;
+    color: #808080;
+}
