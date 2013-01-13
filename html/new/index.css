@@ -6,7 +6,6 @@ body {
 
 p {
     text-align: justify;
-    text-indent: 1em;
 }
 
 a {
@@ -28,9 +27,6 @@ strong {
 
 .artifact {
     clear: both;
-}
-.artifact p:first-child {
-    text-indent: 0;
 }
 .artifact img {
     float:right;
