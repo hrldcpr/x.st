@@ -133,7 +133,7 @@ function draw() {
 	    fillCube(c, u, v);
     }
 
-    if (mouseU !== undefined && mouseV !== undefined)
+    if (mouseU !== undefined && mouseV !== undefined && !convection)
 	strokeCube(c, mouseU, mouseV);
 }
 
@@ -144,9 +144,7 @@ function fromPixel(x, y) {
 	    v: Math.round((x + y) / 2)};
 }
 
-function click(e) {
-    var p = fromPixel(e.offsetX, e.offsetY);
-
+function doClick(p) {
     var w = getCube(p.u, p.v);
     var neighbors = getNeighbors(p.u, p.v).sort();
     if (w == 0) // create a new cube behind all neighbors
@@ -159,20 +157,27 @@ function click(e) {
 	    w = neighbors[i] + 1;
     }
     setCube(p.u, p.v, w);
-    console.log(p.u + ',' + p.v + ': ' + getCube(p.u, p.v));
 
     draw();
 }
 
+var dragging = false;
+function mousedown(e) {
+    dragging = true;
+    doClick(fromPixel(e.offsetX, e.offsetY));
+}
 function mousemove(e) {
     var p = fromPixel(e.offsetX, e.offsetY);
     if (mouseU != p.u || mouseV != p.v) {
-	console.log(p.u + ',' + p.v + ': ' + getCube(p.u, p.v));
-
 	mouseU = p.u;
 	mouseV = p.v;
-	draw();
+
+        if (dragging) doClick(p);
+	else draw();
     }
+}
+function mouseup(e) {
+    dragging = false;
 }
 
 // for (var v = 0; v < 2*N; v++) {
@@ -221,15 +226,16 @@ var tick = 1; // so we only convect a given cube once per round
 
 $(function() {
     canvas = $('#isometric');
-    canvas.click(click);
+    canvas.mousedown(mousedown);
     canvas.mousemove(mousemove);
+    $(window).mouseup(mouseup);
+
     canvas.mouseenter(function() {
         convection = false;
     });
     canvas.mouseleave(function() {
         convection = true;
-        mouseU = mouseV = undefined; // stop drawing the mouse outline
-        draw();
+        draw(); // since we now stop drawing the mouse outline
     });
 
     // if we don't do this, then double-clicking on the canvas ends up selecting nearby text :/
