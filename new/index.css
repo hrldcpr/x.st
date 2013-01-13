@@ -1,10 +1,19 @@
-html {
+body {
+    margin: 1em auto;
     font-size: 14pt;
+    max-width: 600px;
 }
 
-body {
-    text-align: center;
-    background: #eee;
+p {
+    text-indent: 1em;
+    text-align: justify;
+    clear: both;
+}
+
+p img {
+    float:right;
+    margin: 0em 0em 1em 1em;
+    width: 200px;
 }
 
 a {
@@ -20,39 +29,12 @@ strong {
     font-size: 1.5em;
 }
 
-.header {
-    margin: 0px;
-    padding: 0em 1em 0.5em 1em;
+.intro {
+    margin-bottom: 1em;
     font-size: 1.5em;
-    background: #ddd;
-    border-bottom: solid 2px #00f8f8;
 }
 
-.footer {
-    margin: 0px;
-    padding: 0em 1em 0.5em 1em;
-    background: #ddd;
-    border-top: solid 2px #ccc;
-}
-
-.thing {
-    display: inline-block;
-    margin: 1em;
-    padding: 1em;
-    max-width: 300px;
-    background: white;
-    border: solid 2px #ccc;
-    vertical-align: middle;
-}
-
-.thing img {
-    float: left;
-    max-width: 150px;
-    max-height: 200px;
-    margin: 0.5em;
-}
-
-.thing.note {
-    background: none;
-    color: #808080;
+#isometric {
+    background: url('images/smokestack-syzygy.jpg');
+    border: solid 2px black;
 }
