@@ -1,4 +1,4 @@
-//(function() {
+(function(undefined) {
 
 var canvas;
 
@@ -182,43 +182,55 @@ function mousemove(e) {
 //     }
 // }
 
+var convection = false;
 var tick = 1; // so we only convect a given cube once per round
-function convect() {
-    for (var v = 0; v < 2*N; v++) {
-        for (var u = -N; u < N; u++) {
-            var w = getCube(u, v);
-            if (w > 0 && w < tick) {
-                setCube(u, v, 0);
-                if (u < N && v > 0) {
-                    if (Math.random() < 0.5)
-                        setCube(u + 1, v - 1, tick);
-                    if (Math.random() < 0.25)
-                        setCube(u + 1, v - 2, tick);
-                    if (Math.random() < 0.25)
-                        setCube(u + 2, v - 1, tick);
-                    if (Math.random() < 0.25)
-                        setCube(u + 2, v - 2, tick);
+(function convect() {
+    if (convection) {
+        for (var v = 0; v < 2*N; v++) {
+            for (var u = -N; u < N; u++) {
+                var w = getCube(u, v);
+                if (w > 0 && w < tick) {
+                    setCube(u, v, 0);
+                    if (u < N && v > 0) {
+                        if (Math.random() < 0.5)
+                            setCube(u + 1, v - 1, tick);
+                        if (Math.random() < 0.25)
+                            setCube(u + 1, v - 2, tick);
+                        if (Math.random() < 0.25)
+                            setCube(u + 2, v - 1, tick);
+                        if (Math.random() < 0.25)
+                            setCube(u + 2, v - 2, tick);
+                    }
                 }
             }
         }
+        tick++;
+
+        if (tick % 3 == 0)
+            setCube(-12, 24, 1);
+        if (tick % 5 == 0)
+            setCube(-12, 26, 1);
+        if (tick % 7 == 0)
+            setCube(-12, 30, 1);
+
+        draw();
     }
-    tick++;
 
-    if (tick % 3 == 0)
-        setCube(-12, 24, 1);
-    if (tick % 5 == 0)
-        setCube(-12, 26, 1);
-    if (tick % 7 == 0)
-        setCube(-12, 30, 1);
-
-    draw();
     setTimeout(convect, 300);
-}
+})();
 
 $(function() {
     canvas = $('#isometric');
     canvas.click(click);
     canvas.mousemove(mousemove);
+    canvas.mouseenter(function() {
+        convection = false;
+    });
+    canvas.mouseleave(function() {
+        convection = true;
+        mouseU = mouseV = undefined; // stop drawing the mouse outline
+        draw();
+    });
 
     // if we don't do this, then double-clicking on the canvas ends up selecting nearby text :/
     canvas.on('selectstart', function(e) {
@@ -231,8 +243,7 @@ $(function() {
     c.lineWidth = 2 * N / dX / canvas.width;
 
     draw();
-
-    convect();
+    convection = true;
 });
 
-//})();
+})();
