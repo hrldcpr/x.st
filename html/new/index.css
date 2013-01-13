@@ -1,19 +1,12 @@
 body {
-    margin: 1em auto;
+    margin: 1em auto 4em auto;
     font-size: 14pt;
     max-width: 600px;
 }
 
 p {
-    text-indent: 1em;
     text-align: justify;
-    clear: both;
-}
-
-p img {
-    float:right;
-    margin: 0em 0em 1em 1em;
-    width: 200px;
+    text-indent: 1em;
 }
 
 a {
@@ -29,9 +22,21 @@ strong {
     font-size: 1.5em;
 }
 
-.intro {
-    margin-bottom: 1em;
+.header {
     font-size: 1.5em;
+}
+
+.artifact {
+    clear: both;
+}
+.artifact p:first-child {
+    text-indent: 0;
+}
+.artifact img {
+    float:right;
+    margin: 0em 0em 1em 1em;
+    max-width: 200px;
+    max-height: 300px;
 }
 
 #isometric {
