@@ -1,4 +1,4 @@
-(function(undefined) {
+(function(window, undefined) {
 
 var canvas;
 
@@ -125,7 +125,7 @@ function strokeCube(c, u, v) {
 var mouseU, mouseV;
 
 function draw() {
-    var c = canvas.getContext('2d');
+    var c = canvas[0].getContext('2d');
 
     c.clearRect(0, 0, 2 * N, 2 * N);
     for (var v = 0; v < 2*N; v++) {
@@ -137,9 +137,13 @@ function draw() {
 	strokeCube(c, mouseU, mouseV);
 }
 
-function fromPixel(x, y) {
-    x *= N / canvas.width / dX; // = u + v
-    y *= N / canvas.height / dY; // = v - u
+function fromPixel(pageX, pageY) {
+    var offset = canvas.offset();
+    var x = pageX - offset.left;
+    var y = pageY - offset.top;
+
+    x *= N / canvas[0].width / dX; // = u + v
+    y *= N / canvas[0].height / dY; // = v - u
     return {u: Math.round((x - y) / 2),
 	    v: Math.round((x + y) / 2)};
 }
@@ -164,10 +168,10 @@ function doClick(p) {
 var dragging = false;
 function mousedown(e) {
     dragging = true;
-    doClick(fromPixel(e.offsetX, e.offsetY));
+    doClick(fromPixel(e.pageX, e.pageY));
 }
 function mousemove(e) {
-    var p = fromPixel(e.offsetX, e.offsetY);
+    var p = fromPixel(e.pageX, e.pageY);
     if (mouseU != p.u || mouseV != p.v) {
 	mouseU = p.u;
 	mouseV = p.v;
@@ -243,13 +247,12 @@ $(function() {
         e.preventDefault();
     });
 
-    canvas = canvas[0];
-    var c = canvas.getContext('2d');
-    c.scale(canvas.width / N * dX, canvas.height / N * dY);
-    c.lineWidth = 2 * N / dX / canvas.width;
+    var c = canvas[0].getContext('2d');
+    c.scale(canvas[0].width / N * dX, canvas[0].height / N * dY);
+    c.lineWidth = 2 * N / dX / canvas[0].width;
 
     draw();
     convection = true;
 });
 
-})();
+})(this);
