@@ -1,5 +1,5 @@
 body {
-    margin: 1em auto 4em auto;
+    margin: 1em auto;
     font-size: 14pt;
     max-width: 600px;
 }
@@ -26,13 +26,21 @@ strong {
 }
 
 .artifact {
-    clear: both;
+    float: left;
+    width: 100%;
 }
-.artifact img {
-    float: right;
-    margin: 0em 0em 1em 1em;
-    max-width: 200px;
-    max-height: 300px;
+.date {
+    float: left;
+    margin-top: 1.5em;
+    font-size: 0.8em;
+    width: 70px;
+}
+.text {
+    float: left;
+    max-width: 530px;
+}
+.center {
+    text-align: center;
 }
 
 #isometric {

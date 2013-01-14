@@ -30,7 +30,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       <p><strong>syzygy</strong> is an alignment of things,
         so presumably a <strong>syzygyst</strong> is someone who lines things up</p>
       <!-- <img style="wdith: 100%; border: solid 1px black;" src="images/smokestack-syzygy.jpg" /> -->
-      <canvas id="isometric" width="600" height="600"></canvas>
+      <!-- 596 + 4 pixels of border = 600, width of parent -->
+      <canvas id="isometric" width="596" height="596"></canvas>
     </div>
 
     <p>Hello I am <strong>Harold Cooper</strong> and here are some of my digital artifacts.
@@ -41,60 +42,76 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       and on <a href="https://instagram.com/hrldcpr">Instagram</a>.
     </p>
 
-    <div class="artifact"><p>
-        <small>2012.12</small>
-        <a href="javascript-coroutines/">Coroutine Event Loops in Javascript</a>
-        discusses the use of coroutines for Javascript event-handling,
-        as an interesting alternative to callbacks.</p>
-      <p>It includes a <a href="javascript-coroutines/#demo">live demo</a> contrasting coroutines and callbacks.</p></div>
+    <div class="artifact">
+        <div class="date">2012.12</div>
+        <div class="text"><p>
+            <a href="javascript-coroutines/">Coroutine Event Loops in Javascript</a>
+            discusses the use of coroutines for Javascript event-handling,
+            as an interesting alternative to callbacks.</p>
+          <p>It includes a <a href="javascript-coroutines/#demo">live demo</a> contrasting coroutines and callbacks.</p></div>
+    </div>
+
+    <div class="artifact">
+        <div class="date">2012.04</div>
+        <div class="text"><p>
+            <a href="https://gist.github.com/2012250">One-line Tree in Python</a>
+            is a frivolous use of the builtin <code>defaultdict</code> to implement a tree structure.</p></div>
+    </div>
+
+    <div class="artifact">
+        <div class="date">2011.11</div>
+        <div class="text"><p>
+            <a href="http://extendny.com">ExtendNY</a>
+            is an interactive map which extends the Manhattan Grid of streets and avenues to every point on Earth.</p>
+          <p class="center"><img src="images/extendny.png" /></p>
+          <p>It received lots of feedback,
+            including people around the world tweeting their "New York" addresses,
+            many comparisons to
+            <a href="http://en.wikipedia.org/wiki/View_of_the_World_from_9th_Avenue"><em>View of the World from 9th Avenue</em></a>,
+            and was called <a href="http://www.fastcodesign.com/1665537/extendny-stretches-nycs-street-grid-across-the-entire-globe">"Infographic Of The Day"</a>
+            despite not really being an infographic.</p>
+          <p>I also gave a <a href="http://www.youtube.com/watch?v=ilGj5Jd6B9Y">short talk</a> about the project.</p></div>
+    </div>
 
     <div class="artifact"><p>
-        <small>2012.04</small>
-        <a href="https://gist.github.com/2012250">One-line Tree in Python</a>
-        is a frivolous use of the builtin <code>defaultdict</code> to implement a tree structure.</p></div>
+        <div class="date">2011.03</div>
+        <div class="text"><p>
+            <a href="http://wordmergeapp.com">WordMerge</a>
+            is an iPhone app for generating and discovering portmanteaux
+            like <em>stupidestrian</em> and <em>enchantelope</em>.</p>
+          <p class="center"><img src="images/wordmerge.png" /></p>
+          <p>It's based on the original web version <a href="http://werdmerge.com">WerdMerge</a> by Matt Handler.</p></div>
+    </div>
 
-    <div class="artifact"><p>
-        <img src="images/extendny.png" />
-        <small>2011.11</small>
-        <a href="http://extendny.com">ExtendNY</a>
-        is an interactive map which extends the Manhattan Grid of streets and avenues to every point on Earth.</p>
-      <p>It "went viral" and received lots of interesting feedback, including many comparisons to
-        <a href="http://en.wikipedia.org/wiki/View_of_the_World_from_9th_Avenue"><em>View of the World from 9th Avenue</em></a>,
-        and was called <a href="http://www.fastcodesign.com/1665537/extendny-stretches-nycs-street-grid-across-the-entire-globe">"Infographic Of The Day"</a>
-        despite not really being an infographic.
-        I also gave a <a href="http://www.youtube.com/watch?v=ilGj5Jd6B9Y">short talk</a> about the project.</p></div>
+    <div class="artifact">
+        <div class="date">2008.11</div>
+        <div class="text"><p>
+            <a href="http://pcollections.org">PCollections</a>
+            serves as a persistent and immutable analogue of the Java Collections Framework.</p></div>
+    </div>
 
-    <div class="artifact"><p>
-        <img src="images/wordmerge.png" />
-        <small>2011.03</small>
-        <a href="http://wordmergeapp.com">WordMerge</a>
-        is an iPhone app for generating and discovering portmanteaux
-        like <em>stupidestrian</em> and <em>enchantelope</em>.</p>
-      <p>It's based on the original web version <a href="http://werdmerge.com">WerdMerge</a> by Matt Handler.</p></div>
-
-    <div class="artifact"><p>
-        <small>2008.11</small>
-        <a href="http://pcollections.org">PCollections</a>
-        serves as a persistent and immutable analogue of the Java Collections Framework.</p></div>
-
-    <div class="artifact"><p>
+    <div class="artifact">
         <!-- TODO spectra image -->
-        <small>2008.04</small>
-        <a href="Public/spectra.pdf">Spectra</a>
-        is a math poem thought experiment which asks the question
-        <em>"Is there a continuous surface made up of every continuous function?"</em>
-        and meanders towards the answer.</p></div>
+        <div class="date">2008.04</div>
+        <div class="text"><p>
+            <a href="Public/spectra.pdf">Spectra</a>
+            is a math poem thought experiment which asks the question
+            <em>"Is there a continuous surface made up of every continuous function?"</em>
+            and meanders towards the answer.</p></div>
+    </div>
 
     <!-- TODO Transformable Penrose Tilings -->
     <!-- TODO port to HTML5-->
 
-    <div class="artifact"><p>
+    <div class="artifact">
         <!-- TODO port to HTML5-->
-        <img src="images/linkages.gif" />
-        <small>2007.06</small>
-        <a href="Public/linkage/">Mechanical Linkages in Python</a>
-        provides a graphical interface for simulating mechanical linkages,
-        and describes the <em>rigidity theory</em> used to implement the simulator.</p></div>
+        <div class="date">2007.06</div>
+        <div class="text"><p>
+            <a href="Public/linkage/">Mechanical Linkages in Python</a>
+            provides a graphical interface for simulating mechanical linkages,
+            and describes the <em>rigidity theory</em> used to implement the simulator.</p>
+          <p class="center"><img src="images/linkages.gif" /></p></div>
+    </div>
 
     <!-- TODO move to github, and port to OpenGL 2.x? -->
     <!-- <div class="artifact"><p>
@@ -106,14 +123,19 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
     <!-- TODO move conductance to github -->
 
-    <div class="artifact"><p>
-        <small>2004.09</small>
-        <a href="http://pypi.python.org/pypi?:action=display&name=hungarian">hungarian</a>
-        is a simple Python wrapper for a C++ implementation of Knuth's Hungarian algorithm, a.k.a. Munkres' algorithm, for solving the linear assignment problem.</p></div>
+    <div class="artifact">
+        <div class="date">2004.09</div>
+        <div class="text"><p>
+            <a href="http://pypi.python.org/pypi?:action=display&name=hungarian">hungarian</a>
+            is a simple Python wrapper for a C++ implementation of Knuth's Hungarian algorithm, a.k.a. Munkres' algorithm, for solving the linear assignment problem.</p></div>
+    </div>
 
-    <div class="artifact"><p>
-        <small>2004.08</small>
-        <a href="http://pypi.python.org/pypi?:action=display&name=pyLAPJV">pyLAPJV</a>
-        is a simple Python wrapper for a C++ implementation of the Jonker-Volgenant algorithm, LAPJV, for solving the linear assignment problem.</p></div>
+    <div class="artifact">
+        <div class="date">2004.08</div>
+        <div class="text"><p>
+            <a href="http://pypi.python.org/pypi?:action=display&name=pyLAPJV">pyLAPJV</a>
+            is a simple Python wrapper for a C++ implementation of the Jonker-Volgenant algorithm, LAPJV, for solving the linear assignment problem.</p></div>
+    </div>
+
   </body>
 </html>
