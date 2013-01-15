@@ -47,3 +47,7 @@ strong {
     background: url('images/smokestack-syzygy.jpg');
     border: solid 2px black;
 }
+
+#Phi {
+    display: inline-block;
+}
