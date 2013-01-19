@@ -133,7 +133,7 @@ function draw() {
 	    fillCube(c, u, v);
     }
 
-    if (mouseU !== undefined && mouseV !== undefined && !convection)
+    if (mouseU !== undefined && mouseV !== undefined)
 	strokeCube(c, mouseU, mouseV);
 }
 
@@ -168,6 +168,7 @@ function doClick(p) {
 var dragging = false;
 function mousedown(e) {
     dragging = true;
+    convection = false;
     doClick(fromPixel(e.pageX, e.pageY));
 }
 function mousemove(e) {
@@ -182,6 +183,7 @@ function mousemove(e) {
 }
 function mouseup(e) {
     dragging = false;
+    convection = true;
 }
 
 // for (var v = 0; v < 2*N; v++) {
@@ -234,12 +236,9 @@ $(function() {
     canvas.mousemove(mousemove);
     $(window).mouseup(mouseup);
 
-    canvas.mouseenter(function() {
-        convection = false;
-    });
     canvas.mouseleave(function() {
-        convection = true;
-        draw(); // since we now stop drawing the mouse outline
+        mouseU = mouseV = undefined; // stop drawing the mouse outline
+        draw();
     });
 
     // if we don't do this, then double-clicking on the canvas ends up selecting nearby text :/
