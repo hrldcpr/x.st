@@ -191,10 +191,9 @@ function mouseup(e) {
 //     }
 // }
 
-var convection = false;
 var tick = 1; // so we only convect a given cube once per round
-(function convect() {
-    if (convection && !dragging) {
+function convect() {
+    if (!dragging) {
         for (var v = 0; v < 2*N; v++) {
             for (var u = -N; u < N; u++) {
                 var w = getCube(u, v);
@@ -226,7 +225,7 @@ var tick = 1; // so we only convect a given cube once per round
     }
 
     setTimeout(convect, 300);
-})();
+}
 
 $(function() {
     canvas = $('#isometric');
@@ -249,7 +248,7 @@ $(function() {
     c.lineWidth = 2 * N / dX / canvas[0].width;
 
     draw();
-    convection = true;
+    convect();
 });
 
 })(this);
