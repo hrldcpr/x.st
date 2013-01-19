@@ -168,7 +168,6 @@ function doClick(p) {
 var dragging = false;
 function mousedown(e) {
     dragging = true;
-    convection = false;
     doClick(fromPixel(e.pageX, e.pageY));
 }
 function mousemove(e) {
@@ -183,7 +182,6 @@ function mousemove(e) {
 }
 function mouseup(e) {
     dragging = false;
-    convection = true;
 }
 
 // for (var v = 0; v < 2*N; v++) {
@@ -196,7 +194,7 @@ function mouseup(e) {
 var convection = false;
 var tick = 1; // so we only convect a given cube once per round
 (function convect() {
-    if (convection) {
+    if (convection && !dragging) {
         for (var v = 0; v < 2*N; v++) {
             for (var u = -N; u < N; u++) {
                 var w = getCube(u, v);
