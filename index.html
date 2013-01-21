@@ -6,18 +6,11 @@
     <title>harold cooper</title>
 
     <link rel="stylesheet" type="text/css" href="normalize.css" />
-
     <link rel="stylesheet" type="text/css" href="index.css" />
 
     <script src="jquery-1.8.2.min.js"></script>
-
     <script src="isometric.js"></script>
-
-    <script src="processing.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      // convenience function to get the id attribute of generated sketch html element
-      function getProcessingSketchId () { return 'Phi'; }
-    </script>
+    <script src="processing.js"></script>
 
     <script type="text/javascript">
 var _gaq = _gaq || [];
@@ -135,7 +128,14 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
         <div class="text"><p>
             <a href="Public/Phi.js/">Phi</a>
             is a frenetic Processing sketch which zooms in and out through the endless golden spiral.</p>
+
           <p class="center"><canvas width="400" height="400" id="Phi" data-processing-sources="Phi.pde"></canvas></p>
+          <script>
+// processing.js crashes android chrome :'(
+if (navigator.userAgent.indexOf('Android') !== -1 && navigator.userAgent.indexOf('Chrome') !== -1)
+    $('#Phi').remove();
+          </script>
+
           <p>The <a href="Public/Phi.html">original Java version</a> has sound&mdash;careful it's loud&mdash;but
             apparently Processing.js doesn't support that :'(</p></div>
     </div>
