@@ -1,3 +1,8 @@
+// source of convecting cubes, can be overridden elsewhere:
+var CONVECTION_SOURCES = [{u: -12, v: 24},
+                          {u: -12, v: 26},
+                          {u: -12, v: 30}];
+
 (function(window, undefined) {
 
 var canvas;
@@ -127,7 +132,7 @@ var mouseU, mouseV;
 function draw() {
     var c = canvas[0].getContext('2d');
 
-    c.clearRect(0, 0, 2 * N, 2 * N);
+    c.clearRect(0, 0, 2 * N, 3 * N);
     for (var v = 0; v < 2*N; v++) {
 	for (var u = -N; u < N; u++)
 	    fillCube(c, u, v);
@@ -143,7 +148,7 @@ function fromPixel(pageX, pageY) {
     var y = pageY - offset.top;
 
     x *= N / canvas[0].width / dX; // = u + v
-    y *= N / canvas[0].height / dY; // = v - u
+    y *= N / canvas[0].width / dY; // = v - u
     return {u: Math.round((x - y) / 2),
 	    v: Math.round((x + y) / 2)};
 }
@@ -184,12 +189,8 @@ function mouseup(e) {
     dragging = false;
 }
 
-// for (var v = 0; v < 2*N; v++) {
-//     for (var u = -N; u < N; u++) {
-// 	if (Math.random() < 0.1)
-// 	    setCube(u, v, Math.ceil(3 * Math.random()));
-//     }
-// }
+
+var PRIMES = [3, 5, 7, 11, 13]; // enough primes for five convection sources
 
 var tick = 1; // so we only convect a given cube once per round
 function convect() {
@@ -214,12 +215,12 @@ function convect() {
         }
         tick++;
 
-        if (tick % 3 == 0)
-            setCube(-12, 24, 1);
-        if (tick % 5 == 0)
-            setCube(-12, 26, 1);
-        if (tick % 7 == 0)
-            setCube(-12, 30, 1);
+        for (var i in CONVECTION_SOURCES) {
+            if (tick % PRIMES[i] == 0) {
+                var source = CONVECTION_SOURCES[i];
+                setCube(source.u, source.v, 1);
+            }
+        }
 
         draw();
     }
@@ -244,7 +245,7 @@ $(function() {
     });
 
     var c = canvas[0].getContext('2d');
-    c.scale(canvas[0].width / N * dX, canvas[0].height / N * dY);
+    c.scale(canvas[0].width / N * dX, canvas[0].width / N * dY);
     c.lineWidth = 2 * N / dX / canvas[0].width;
 
     draw();
