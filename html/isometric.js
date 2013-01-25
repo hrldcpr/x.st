@@ -1,7 +1,7 @@
 // source of convecting cubes, can be overridden elsewhere:
-var CONVECTION_SOURCES = [{u: -12, v: 24},
-                          {u: -12, v: 26},
-                          {u: -12, v: 30}];
+var CONVECTION_SOURCES = [{t: 3, u: -12, v: 24},
+                          {t: 5, u: -12, v: 26},
+                          {t: 7, u: -12, v: 30}];
 
 (function(window, undefined) {
 
@@ -190,8 +190,6 @@ function mouseup(e) {
 }
 
 
-var PRIMES = [3, 5, 7, 11, 13]; // enough primes for five convection sources
-
 var tick = 1; // so we only convect a given cube once per round
 function convect() {
     if (!dragging) {
@@ -215,12 +213,10 @@ function convect() {
         }
         tick++;
 
-        for (var i in CONVECTION_SOURCES) {
-            if (tick % PRIMES[i] == 0) {
-                var source = CONVECTION_SOURCES[i];
+        $.each(CONVECTION_SOURCES, function(i, source) {
+            if (tick % source.t == 0)
                 setCube(source.u, source.v, 1);
-            }
-        }
+        });
 
         draw();
     }
