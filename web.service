@@ -5,9 +5,9 @@ Requires=docker.service
 
 [Service]
 TimeoutStartSec=0
-ExecStartPre=-docker rm -f web
-# TODO ExecStartPre=docker pull hrldcpr/x.st-web
-ExecStart=docker run --name web -p 80:80 web
+ExecStartPre=-/usr/bin/docker rm -f web
+# TODO ExecStartPre=/usr/bin/docker pull hrldcpr/x.st-web
+ExecStart=/usr/bin/docker run --name web -p 80:80 web
 
 [Install]
 WantedBy=multi-user.target
