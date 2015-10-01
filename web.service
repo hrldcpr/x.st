@@ -1,12 +1,11 @@
 [Unit]
-Description=x.st
+Description=web
 After=docker.service
 Requires=docker.service
 
 [Service]
 TimeoutStartSec=0
 ExecStartPre=-/usr/bin/docker rm -f web
-# TODO ExecStartPre=/usr/bin/docker pull hrldcpr/x.st-web
 ExecStart=/usr/bin/docker run --name web -p 80:80 -p 443:443 web
 
 [Install]
