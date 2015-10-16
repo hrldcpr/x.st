@@ -1,8 +1,7 @@
 
 ## Initial Setup
 
-    sudo cp web.service /etc/systemd/system/
-    sudo systemctl enable /etc/systemd/system/web.service
+    sudo systemctl enable $PWD/web.service
 
 Copy the private https key to `ssl/secret/x.st.key`
 
