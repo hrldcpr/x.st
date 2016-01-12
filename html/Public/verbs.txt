@@ -1,0 +1,53 @@
+are --> were = whir --> whirred = word --> worded
+bear --> bore --> bored = board --> boarded
+fine --> fined = find --> found --> founded
+see --> saw --> sawed = sod --> sodded
+wear --> wore = war --> warred = ward --> warded
+whine --> whined = wind --> wound --> wounded
+
+ban --> banned = band --> banded
+bill --> billed = build --> built
+bow --> bowed = bode --> boded
+bray --> brayed = braid --> braided
+breed --> bred = bread --> breaded
+brew --> brewed = brood --> brooded
+bus --> bussed = bust --> busted
+core --> cored = chord --> chorded
+core --> cored = cord --> corded
+discuss --> discussed = disgust --> disgusted
+foal --> foaled = fold --> folded
+gar --> garred = guard --> guarded
+gnaw --> gnawed = nod --> nodded
+graph --> graphed = graft --> grafted
+gray --> grayed = grade --> graded
+grind --> ground --> grounded
+grow --> grown = groan --> groaned
+hear --> heard = herd --> herded
+hole --> holed = hold --> held
+inveigh --> inveighed = invade --> invaded
+knee --> kneed = knead --> kneaded
+knee --> kneed = need --> needed
+law --> lawed = laud --> lauded
+lead --> led = lead --> leaded
+low --> lowed = load --> loaded
+mine --> mined = mind --> minded
+miss --> missed = mist --> misted
+paw --> pawed = pod --> podded
+pen --> penned = pend --> pended
+pry --> pried = pride --> prided
+ray --> rayed = raid --> raided
+rend --> rent --> rented
+retar --> retarred = retard --> retarded
+sigh --> sighed = side --> sided
+speak --> spoke --> spoked
+tie --> tied = tide --> tided
+weigh --> weighed = wade --> waded
+whore --> whored = hoard --> hoarded
+work --> wrought = rot --> rotted
+
+... --> beat --> beat --> ...
+... --> bet --> bet --> ...
+... --> cut --> cut --> ...
+... --> let --> let --> ...
+... --> read --> read --> ...
+... --> rid --> rid --> ...
