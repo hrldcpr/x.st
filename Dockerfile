@@ -7,4 +7,4 @@ COPY ssl/*.crt /etc/ssl/certs/
 COPY ssl/secret/*.key /etc/ssl/private/
 COPY nginx/x.st.conf /etc/nginx/conf.d/
 
-COPY html-simple /usr/share/nginx/html
+COPY html /usr/share/nginx/html

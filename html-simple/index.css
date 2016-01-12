@@ -1,9 +1,0 @@
-body {
-    margin: 60px auto;
-    max-width: 600px;
-}
-
-#isometric {
-    background: url('picasso.jpg');
-    border: solid 2px black;
-}
