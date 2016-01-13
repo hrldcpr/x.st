@@ -1,5 +1,5 @@
 body {
-    margin: 1em auto;
+    margin: 0em auto 1em auto;
     font-size: 14pt;
     max-width: 600px;
 }
@@ -23,6 +23,9 @@ strong {
 
 .header {
     font-size: 1.5em;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .artifact {
