@@ -1,56 +1,79 @@
-body {
-    margin: 0em auto 1em auto;
-    font-size: 14pt;
-    max-width: 600px;
-}
-
-p {
-    text-align: justify;
-}
+/******/
+/*tags*/
+/******/
 
 a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
 }
+
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+body {
+  font-size: 14pt;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  max-width: 596px;
+  max-height: 596px;
+}
+
+code {
+  color: inherit;
+  background-color: inherit;
 }
 
 strong {
-    font-size: 1.5em;
+  font-size: 1.5em;
+}
+
+/*********/
+/*classes*/
+/*********/
+
+
+.about {
+  margin-bottom: 30px;
+}
+
+.date {
+  margin-top: 0.2em;
+  font-size: 0.8em;
+}
+
+.center {
+  text-align: center;
+  width: 100%;
+}
+
+.content {
+  max-width: 590px;
+  width: 95%;
+  display: inline-block;
+  text-align: justify;
 }
 
 .header {
-    font-size: 1.5em;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+  font-size: 1.5em;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.artifact {
-    float: left;
-    width: 100%;
-}
-.date {
-    float: left;
-    margin-top: 1.5em;
-    font-size: 0.8em;
-    width: 70px;
-}
-.text {
-    float: left;
-    max-width: 530px;
-}
-.center {
-    text-align: center;
-}
+/*****/
+/*ids*/
+/*****/
 
 #isometric {
-    background: url('images/smokestack-syzygy.jpg');
-    border: solid 2px black;
+  background: url('images/smokestack-syzygy.jpg');
+  border: solid 2px black;
 }
 
 #Phi {
-    display: inline-block;
+  display: inline-block;
 }
