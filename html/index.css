@@ -71,6 +71,7 @@ strong {
 
 #isometric {
   background: url('images/smokestack-syzygy.jpg');
+  background-size: cover;
   border: solid 2px black;
 }
 

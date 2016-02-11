@@ -144,11 +144,12 @@ function draw() {
 
 function fromPixel(pageX, pageY) {
     var offset = canvas.offset();
+    var width = canvas.width();
     var x = pageX - offset.left;
     var y = pageY - offset.top;
 
-    x *= N / canvas[0].width / dX; // = u + v
-    y *= N / canvas[0].width / dY; // = v - u
+    x *= N / width / dX; // = u + v
+    y *= N / width / dY; // = v - u
     return {u: Math.round((x - y) / 2),
 	    v: Math.round((x + y) / 2)};
 }
