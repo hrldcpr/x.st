@@ -193,34 +193,33 @@ function mouseup(e) {
 
 var tick = 1; // so we only convect a given cube once per round
 function convect() {
-    if (!dragging) {
-        for (var v = 0; v < 2*N; v++) {
-            for (var u = -N; u < N; u++) {
-                var w = getCube(u, v);
-                if (w > 0 && w < tick) {
-                    setCube(u, v, 0);
-                    if (u < N && v > 0) {
-                        if (Math.random() < 0.5)
-                            setCube(u + 1, v - 1, tick);
-                        if (Math.random() < 0.25)
-                            setCube(u + 1, v - 2, tick);
-                        if (Math.random() < 0.25)
-                            setCube(u + 2, v - 1, tick);
-                        if (Math.random() < 0.25)
-                            setCube(u + 2, v - 2, tick);
-                    }
+    for (var v = 0; v < 2*N; v++) {
+        for (var u = -N; u < N; u++) {
+            var w = getCube(u, v);
+            if (w > 0 && w < tick) {
+                if (!(dragging && mouseU == u && mouseV == v))
+                  setCube(u, v, 0);
+                if (u < N && v > 0) {
+                    if (Math.random() < 0.5)
+                        setCube(u + 1, v - 1, tick);
+                    if (Math.random() < 0.25)
+                        setCube(u + 1, v - 2, tick);
+                    if (Math.random() < 0.25)
+                        setCube(u + 2, v - 1, tick);
+                    if (Math.random() < 0.25)
+                        setCube(u + 2, v - 2, tick);
                 }
             }
         }
-        tick++;
-
-        $.each(CONVECTION_SOURCES, function(i, source) {
-            if (tick % source.t == 0)
-                setCube(source.u, source.v, 1);
-        });
-
-        draw();
     }
+    tick++;
+
+    $.each(CONVECTION_SOURCES, function(i, source) {
+        if (tick % source.t == 0)
+            setCube(source.u, source.v, 1);
+    });
+
+    draw();
 
     setTimeout(convect, 300);
 }
