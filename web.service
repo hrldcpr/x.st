@@ -5,6 +5,7 @@ Requires=docker.service
 
 [Service]
 TimeoutStartSec=0
+Restart=on-failure
 ExecStartPre=-/usr/bin/docker rm -f web
 ExecStart=/usr/bin/docker run --name web -p 80:80 -p 443:443 web
 
