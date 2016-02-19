@@ -11,5 +11,5 @@ Copy the private https key to `ssl/secret/x.st.key`
 
     git -C html/javascript-coroutines pull
     git -C html/linkages pull
-    docker build -t web .
+    docker build --pull --tag=web .
     sudo systemctl restart web.service
