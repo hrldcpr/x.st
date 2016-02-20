@@ -59,7 +59,6 @@ strong {
 }
 
 .header {
-  font-size: 1.5em;
   min-height: 100vh;
   display: flex;
   align-items: center;
