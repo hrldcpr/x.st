@@ -34,8 +34,7 @@ function getNeighbors(u, v) {
 
 function polygon(c, vertices) {
     c.beginPath();
-    c.moveTo(vertices[0], vertices[1]);
-    for (var i = 2; i < vertices.length; i += 2)
+    for (var i = 0; i < vertices.length; i += 2)
 	c.lineTo(vertices[i], vertices[i + 1]);
     c.closePath();
     return c;
