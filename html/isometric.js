@@ -2,7 +2,10 @@
 var CONVECTION_SOURCES = [{t: 3, u: -12, v: 24},
                           {t: 5, u: -12, v: 26},
                           {t: 7, u: -12, v: 30}];
-var CLICK_ME = {u: -5, v: 32};
+
+var CLICK_ME_KEY = 'isometric was clicked';
+var CLICK_ME;
+if (!localStorage.getItem('isometric was clicked')) CLICK_ME = {u: -5, v: 32};
 
 (function(window, undefined) {
 
@@ -163,7 +166,10 @@ function fromPixel(pageX, pageY) {
 }
 
 function doClick(p) {
-    if (CLICK_ME && p.u === CLICK_ME.u && p.v === CLICK_ME.v) CLICK_ME = null;
+    if (CLICK_ME && p.u === CLICK_ME.u && p.v === CLICK_ME.v) {
+        CLICK_ME = null;
+        localStorage.setItem(CLICK_ME_KEY, true);
+    }
 
     var w = getCube(p.u, p.v);
     var neighbors = getNeighbors(p.u, p.v).sort();
