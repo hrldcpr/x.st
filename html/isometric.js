@@ -2,6 +2,7 @@
 var CONVECTION_SOURCES = [{t: 3, u: -12, v: 24},
                           {t: 5, u: -12, v: 26},
                           {t: 7, u: -12, v: 30}];
+var CLICK_ME = {u: -5, v: 32};
 
 (function(window, undefined) {
 
@@ -110,7 +111,7 @@ function fillCube(c, u, v) {
     c.restore();
 }
 
-function strokeCube(c, u, v) {
+function strokeCube(c, u, v, text) {
     c.save();
     c.translate(u + v - 1, v - u - 1);
 
@@ -122,6 +123,12 @@ function strokeCube(c, u, v) {
 		   0, 1];
     c.strokeStyle = '#00f8f8';
     polygon(c, hexagon).stroke();
+
+    if (text) {
+        c.font = '1.5px sans-serif';
+        c.fillStyle = '#00f8f8';
+        c.fillText(text, 1, -1);
+    }
 
     c.restore();
 }
@@ -138,7 +145,9 @@ function draw() {
     }
 
     if (mouseU !== undefined && mouseV !== undefined)
-	strokeCube(c, mouseU, mouseV);
+        strokeCube(c, mouseU, mouseV);
+
+    if (CLICK_ME) strokeCube(c, CLICK_ME.u, CLICK_ME.v);
 }
 
 function fromPixel(pageX, pageY) {
@@ -154,6 +163,8 @@ function fromPixel(pageX, pageY) {
 }
 
 function doClick(p) {
+    if (CLICK_ME && p.u === CLICK_ME.u && p.v === CLICK_ME.v) CLICK_ME = null;
+
     var w = getCube(p.u, p.v);
     var neighbors = getNeighbors(p.u, p.v).sort();
     if (w == 0) // create a new cube behind all neighbors
