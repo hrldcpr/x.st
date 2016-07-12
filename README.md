@@ -9,6 +9,10 @@ Copy the private https key to `ssl/secret/x.st.key`
 
 ## (Re)building
 
+For now, just push the blog: `jekyll build && scp -r site/* x.st:x.st/html/`
+
+And then:
+
     git -C html/javascript-coroutines pull
     git -C html/linkages pull
     docker build --pull --tag=web .
