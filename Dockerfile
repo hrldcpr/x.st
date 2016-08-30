@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:alpine
 
 COPY ssl/dhparam.pem /etc/ssl/
 COPY nginx/ssl.conf /etc/nginx/conf.d/
