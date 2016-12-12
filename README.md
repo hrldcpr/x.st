@@ -19,6 +19,12 @@ And then:
     docker build …  # see below
 
 
+## Deploying with Docker Restart Policies
+
+    docker build --pull --tag=x.st .
+    docker run -d --restart always --name x.st -p 80:80 -p 443:443 x.st
+
+
 ## Deploying on Google Container Engine with Kubernetes
 
 ### Initial setup
