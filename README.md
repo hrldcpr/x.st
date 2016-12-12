@@ -10,7 +10,7 @@ Copy the private https key to `ssl/secret/x.st.key`
 
 ### (Re)building
 
-For now, just push the blog: `jekyll build && scp -r site/* x.st:x.st/html/`
+For now, just push the blog: `jekyll build && scp -r _site/* x.st:x.st/html/`
 
 And then:
 
