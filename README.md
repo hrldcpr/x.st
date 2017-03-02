@@ -5,8 +5,9 @@
 
     git -C html clone https://github.com/hrldcpr/javascript-coroutines.git
     git -C html clone https://github.com/hrldcpr/linkages.git
-
-Copy the private https key to `ssl/secret/x.st.key`
+    sudo letsencrypt certonly --webroot -w html -d x.st -d www.x.st -d …
+    sudo crontab -e
+    # add the line:  @daily letsencrypt renew
 
 ### (Re)building
 
@@ -24,7 +25,7 @@ And then:
     docker network create xst
     # then, run any proxied services or proxy_pass will fail
     docker build --pull --tag=xst .
-    docker run -d --restart always --name xst --network xst -p 80:80 -p 443:443 -v $PWD/html:/usr/share/nginx/html xst
+    docker run --name xst --net xst -p 80:80 -p 443:443 -v $PWD/html:/usr/share/nginx/html -v /etc/letsencrypt:/etc/letsencrypt --restart always -d xst
 
 
 ## Deploying on Google Container Engine with Kubernetes
