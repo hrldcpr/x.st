@@ -24,7 +24,7 @@ And then:
     docker network create xst
     # then, run any proxied services or proxy_pass will fail
     docker build --pull --tag=xst .
-    docker run -d --restart always --name xst --network xst -p 80:80 -p 443:443 xst
+    docker run -d --restart always --name xst --network xst -p 80:80 -p 443:443 -v $PWD/html:/usr/share/nginx/html xst
 
 
 ## Deploying on Google Container Engine with Kubernetes
