@@ -21,8 +21,10 @@ And then:
 
 ## Deploying with Docker Restart Policies
 
-    docker build --pull --tag=x.st .
-    docker run -d --restart always --name x.st -p 80:80 -p 443:443 x.st
+    docker network create xst
+    # then, run any proxied services or proxy_pass will fail
+    docker build --pull --tag=xst .
+    docker run -d --restart always --name xst --network xst -p 80:80 -p 443:443 xst
 
 
 ## Deploying on Google Container Engine with Kubernetes
@@ -36,7 +38,7 @@ And then:
 See Docker (re)building above, and then:
 
     PROJECT=$(gcloud config list --format 'value(core.project)')
-    IMAGE=gcr.io/$PROJECT/x.st
+    IMAGE=gcr.io/$PROJECT/xst
     TAG=$(date +%s)
 
     docker build --pull --tag $IMAGE .
