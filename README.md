@@ -8,7 +8,9 @@
     htpasswd -c secret/fllow.x.st <some_username>
     sudo letsencrypt certonly --webroot -w $PWD/html -d x.st -d www.x.st -d outcognito.x.st -d fllow.x.st
     sudo crontab -e
-    # add the line:  @daily letsencrypt renew
+    # add the lines:
+    @daily letsencrypt renew
+    @weekly docker restart xst
 
 ### (Re)building
 
