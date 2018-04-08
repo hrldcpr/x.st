@@ -6,7 +6,7 @@
     git -C html clone https://github.com/hrldcpr/javascript-coroutines.git
     git -C html clone https://github.com/hrldcpr/linkages.git
     htpasswd -c secret/fllow.x.st <some_username>
-    sudo letsencrypt certonly --webroot -w $PWD/html -d x.st -d www.x.st -d outcognito.x.st -d fllow.x.st
+    sudo letsencrypt certonly --webroot -w $PWD/html -d x.st -d www.x.st -d fllow.x.st
     sudo crontab -e
     # add the lines:
     @daily letsencrypt renew
