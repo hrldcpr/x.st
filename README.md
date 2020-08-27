@@ -5,11 +5,13 @@
 
     git -C html clone https://github.com/hrldcpr/javascript-coroutines.git
     git -C html clone https://github.com/hrldcpr/linkages.git
-    htpasswd -c secret/fllow.x.st <some_username>
-    sudo letsencrypt certonly --webroot -w $PWD/html -d x.st -d www.x.st -d fllow.x.st
+    
+    # old letsencrypt command, probably different now:
+    sudo letsencrypt certonly --webroot -w $PWD/html -d x.st -d www.x.st
+    
     sudo crontab -e
     # add the lines:
-    @daily letsencrypt renew
+    @daily certbot renew
     @weekly docker restart xst
 
 ### (Re)building
