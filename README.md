@@ -1,4 +1,6 @@
 
+*Note* that `/etc/nginx/conf.d/default.conf` remains untouched from the Docker base image, so the default http behavior will appear for any domain name not covered in our custom `nginx/*.conf` files, for better or worse.
+
 ## Building the Docker image
 
 ### Initial setup
