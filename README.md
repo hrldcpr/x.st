@@ -27,5 +27,5 @@ And then:
     docker network create xst
     # then, run any proxied services or proxy_pass will fail
     docker build --tag xst .
-    # TODO may need something like --volume /etc/letsencrypt:/etc/letsencrypt
-    docker run --name xst --network xst --publish 80:80 --publish 443:443 --volume $PWD/html:/usr/share/nginx/html --restart always --detach xst
+    # TODO --publish 443:443 and maybe something like --volume /etc/letsencrypt:/etc/letsencrypt
+    docker run --name xst --network xst --publish 80:80 --volume $PWD/html:/usr/share/nginx/html --restart always --detach xst
