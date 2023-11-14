@@ -1,4 +1,6 @@
 
+*TODO* get letsencrypt working again; just relying on cloudflare https for now.
+
 *Note* that `/etc/nginx/conf.d/default.conf` remains untouched from the Docker base image, so the default http behavior will appear for any domain name not covered in our custom `nginx/*.conf` files, for better or worse.
 
 ## Building the Docker image
@@ -7,14 +9,7 @@
 
     git -C html clone https://github.com/hrldcpr/javascript-coroutines.git
     git -C html clone https://github.com/hrldcpr/linkages.git
-    
-    # old letsencrypt command, probably different now:
-    sudo letsencrypt certonly --webroot -w $PWD/html -d x.st -d www.x.st
-    
-    sudo crontab -e
-    # add the lines:
-    @daily certbot renew
-    @weekly docker restart xst
+    # TODO letsencrypt certbot and perhaps crontab
 
 ### (Re)building
 
@@ -32,4 +27,5 @@ And then:
     docker network create xst
     # then, run any proxied services or proxy_pass will fail
     docker build --tag xst .
-    docker run --name xst --network xst --publish 80:80 --publish 443:443 --volume $PWD/html:/usr/share/nginx/html --volume /etc/letsencrypt:/etc/letsencrypt --restart always --detach xst
+    # TODO may need something like --volume /etc/letsencrypt:/etc/letsencrypt
+    docker run --name xst --network xst --publish 80:80 --publish 443:443 --volume $PWD/html:/usr/share/nginx/html --restart always --detach xst
