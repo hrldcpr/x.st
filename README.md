@@ -1,7 +1,4 @@
-
-*TODO* get letsencrypt working again; just relying on cloudflare https for now.
-
-*Note* that `/etc/nginx/conf.d/default.conf` remains untouched from the Docker base image, so the default http behavior will appear for any domain name not covered in our custom `nginx/*.conf` files, for better or worse.
+_TODO_ get letsencrypt working again; just relying on cloudflare https for now.
 
 ## Building the Docker image
 
@@ -20,7 +17,6 @@ And then:
     git -C html/javascript-coroutines pull
     git -C html/linkages pull
     docker build …  # see below
-
 
 ## Deploying with Docker Restart Policies
 
