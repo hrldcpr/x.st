@@ -4,7 +4,6 @@
 
     git -C html clone https://github.com/hrldcpr/javascript-coroutines.git
     git -C html clone https://github.com/hrldcpr/linkages.git
-    # TODO letsencrypt certbot and perhaps crontab
 
 ### (Re)building
 
@@ -21,7 +20,6 @@ And then:
     docker network create xst
     # then, run any proxied services or proxy_pass will fail
     docker build --tag xst .
-    # TODO --publish 443:443 and maybe something like --volume /etc/letsencrypt:/etc/letsencrypt:ro
     docker run --name xst --network xst --publish 80:80 --publish 443:443 --volume $PWD/html:/usr/share/nginx/html:ro --volume $PWD/letsencrypt:/etc/letsencrypt:ro --restart always --detach xst
 
 ## HTTPS
