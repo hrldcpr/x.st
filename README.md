@@ -29,6 +29,13 @@ And then:
     mkdir letsencrypt
     docker run --rm --interactive --tty --volume $PWD/html:/usr/share/nginx/html --volume $PWD/letsencrypt:/etc/letsencrypt certbot/certbot certonly
     # use option 2 (webroot), domains x.st www.x.st, and webroot path /usr/share/nginx/html
-    # TODO sudo cp certbot-renew.sh /etc/cron.daily/
-    docker run --pull --rm --volume $PWD/html:/usr/share/nginx/html --volume $PWD/letsencrypt:/etc/letsencrypt certbot/certbot renew  # --dry-run to test
-    # (ideally could do --volumes-from xst:rw but it doesn't seem to work)
+
+    # test that renewals will work:
+    docker run --pull --rm --volume $PWD/html:/usr/share/nginx/html --volume $PWD/letsencrypt:/etc/letsencrypt certbot/certbot renew --dry-run
+    # (ideally could do --volumes-from xst:rw but seems like you can't change ro to rw that way)
+
+    crontab -e  # add the following to user crontab
+    # daily certbot renewal check:
+    1 1 * * * docker run --pull --rm --volume $HOME/x.st/html:/usr/share/nginx/html --volume $HOME/x.st/letsencrypt:/etc/letsencrypt certbot/certbot renew
+    # weekly nginx restart in case certificate was renewed:
+    2 2 * * 2 docker restart xst
