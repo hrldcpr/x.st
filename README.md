@@ -36,6 +36,8 @@ And then:
 
     crontab -e  # add the following to user crontab
     # daily certbot renewal check:
-    1 1 * * * docker run --pull --rm --volume $HOME/x.st/html:/usr/share/nginx/html --volume $HOME/x.st/letsencrypt:/etc/letsencrypt certbot/certbot renew
+    1 1 * * * docker run --pull --rm --volume $HOME/x.st/html:/usr/share/nginx/html --volume $HOME/x.st/letsencrypt:/etc/letsencrypt certbot/certbot renew || echo certbot renewal error > $HOME/x.st/html/nocache.html
+    # (uptime robot will email if nocache.html contains "error")
+
     # weekly nginx restart in case certificate was renewed:
     2 2 * * 2 docker restart xst
